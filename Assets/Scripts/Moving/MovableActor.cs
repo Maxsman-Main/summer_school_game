@@ -16,12 +16,14 @@ namespace Moving
         public void MoveRight()
         {
             var moveVector = MakeMoveVector(_speed);
+            _transform.Translate(moveVector);
         }
 
         public void MoveLeft()
         {
             // minus used to invert moving direction
             var moveVector = MakeMoveVector(-_speed);
+            _transform.Translate(moveVector);
         }
 
         private Vector3 MakeMoveVector(float speed)

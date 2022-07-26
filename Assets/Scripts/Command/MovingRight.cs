@@ -14,7 +14,7 @@ namespace Command
         
         public void Execute()
         {
-            Debug.Log("MoveRight");       
+            _movableActor.MoveRight();
         }
     }
 }
