@@ -1,7 +1,12 @@
+using UnityEngine;
+
 namespace Command
 {
-    public class MovingRight
+    public class MovingRight : ICommand
     {
-        
+        public void Execute()
+        {
+            Debug.Log("MoveRight");       
+        }
     }
 }
