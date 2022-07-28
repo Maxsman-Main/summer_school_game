@@ -1,4 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Items;
+using UnityEditor;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 namespace Parameters
@@ -7,6 +12,8 @@ namespace Parameters
     {
         [SerializeField] private int _health;
         [SerializeField] private float _speed;
+
+        private Dictionary<string, IItem> _items;
         
         public event Action<int> OnHealthChanged;
 
@@ -21,5 +28,20 @@ namespace Parameters
         }
 
         public float Speed => _speed;
+
+        public PlayerParameters()
+        {
+            _items = new Dictionary<string, IItem>();
+        }
+
+        public void AddItem(IItem item)
+        {
+            _items.Add(item.Name, item);
+        }
+
+        public void RemoveItem(IItem item)
+        {
+            _items.Remove(item.Name);
+        }
     }
 }

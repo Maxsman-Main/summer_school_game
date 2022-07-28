@@ -7,10 +7,7 @@ namespace Items
         private string _name = "Портфель";
         private IAttackBehavior _attackBehavior;
         
-        public string Name
-        {
-            get => _name;
-        }
+        public string Name => _name;
 
         public void Use()
         {
