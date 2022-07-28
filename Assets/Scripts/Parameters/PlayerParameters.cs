@@ -6,7 +6,7 @@ namespace Parameters
     public class PlayerParameters : MonoBehaviour
     {
         [SerializeField] private int _health;
-        [SerializeField] private int _speed;
+        [SerializeField] private float _speed;
 
         public event Action<int> OnHealthChanged;
 
@@ -20,6 +20,6 @@ namespace Parameters
             }
         }
 
-        public int Speed => _speed;
+        public float Speed => _speed;
     }
 }
