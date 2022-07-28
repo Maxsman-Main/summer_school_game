@@ -7,14 +7,19 @@ namespace Parameters
     {
         [SerializeField] private int _health;
         [SerializeField] private int _speed;
-        
-        private IParameter _healthModel;
-        private IParameter _speedModel;
 
-        private void Start()
+        public event Action<int> OnHealthChanged;
+
+        public int Health
         {
-            _health = new Health();
-            _speed = new Speed();
+            get => _health;
+            set
+            {
+                _health = value < 0 ? 0 : value;
+                OnHealthChanged?.Invoke(value);
+            }
         }
+
+        public int Speed => _speed;
     }
 }
