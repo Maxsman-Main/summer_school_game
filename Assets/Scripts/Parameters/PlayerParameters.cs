@@ -7,7 +7,7 @@ namespace Parameters
     {
         [SerializeField] private int _health;
         [SerializeField] private float _speed;
-
+        
         public event Action<int> OnHealthChanged;
 
         public int Health
