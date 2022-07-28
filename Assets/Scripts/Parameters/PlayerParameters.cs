@@ -28,10 +28,12 @@ namespace Parameters
         }
 
         public float Speed => _speed;
+        public Dictionary<string, IItem> Items => _items;
 
         public PlayerParameters()
         {
             _items = new Dictionary<string, IItem>();
+            this.AddItem(new Backpack());
         }
 
         public void AddItem(IItem item)

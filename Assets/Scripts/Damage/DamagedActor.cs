@@ -14,9 +14,9 @@ namespace Damage
             _parameters = gameObject.GetComponent<PlayerParameters>();
         }
 
-        private void OnCollisionEnter2D(Collision2D col)
+        private void GetDamage(int value)
         {
-            _parameters.Health -= 5;
+            _parameters.Health -= value;
         }
     }
 }
