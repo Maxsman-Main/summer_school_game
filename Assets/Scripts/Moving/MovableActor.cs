@@ -12,7 +12,7 @@ namespace Moving
         private void Start()
         {
             _transform = gameObject.GetComponent<Transform>();
-            _parameters.GetComponent<PlayerParameters>();
+            _parameters = gameObject.GetComponent<PlayerParameters>();
         }
 
         public void MoveRight()
