@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class PlayerParameters : MonoBehaviour
+namespace Parameters
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerParameters : MonoBehaviour
     {
+        [SerializeField] private int _health;
+        [SerializeField] private int _speed;
         
-    }
+        private IParameter _healthModel;
+        private IParameter _speedModel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            _health = new Health();
+            _speed = new Speed();
+        }
     }
 }
