@@ -8,7 +8,7 @@ namespace Moving
     {
         private Transform _transform;
         private PlayerParameters _parameters;
-        
+            
         private void Start()
         {
             _transform = gameObject.GetComponent<Transform>();
