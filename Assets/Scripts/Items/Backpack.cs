@@ -4,10 +4,9 @@ namespace Items
 {
     public class Backpack : IItem
     {
-        private string _name = "Портфель";
-        private IAttackBehavior _attackBehavior;
+        private readonly IAttackBehavior _attackBehavior = new BackpackAttackBehavior();
         
-        public string Name => _name;
+        public string Name => "Портфель";
 
         public void Use()
         {

@@ -34,6 +34,7 @@ namespace Parameters
         {
             _items = new Dictionary<string, IItem>();
             this.AddItem(new Backpack());
+            this.AddItem(new Cockroach());
         }
 
         public void AddItem(IItem item)
