@@ -13,7 +13,6 @@ namespace Items
         
         public void VisualizeList(Parameters.Items items)
         {
-            int counter = 0;
             foreach (var item in items.Value)
             {
                 var itemView =  Instantiate(_itemView, _place.transform, false);
@@ -31,12 +30,6 @@ namespace Items
                     _itemsViews = new List<ItemView>();
                 });
                 itemView.SubscribeOnButtonClick(() => { items.RemoveItem(item.Value.Name);});
-
-                var itemViewTransform = itemView.GetComponent<Transform>();
-                //345 - 110 * counter use to make space between itemsView and shift of start itemView
-                itemViewTransform.localPosition = new Vector3(0, 345 - 110 * counter, 0);
-
-                counter += 1;
             }
         }
     }
