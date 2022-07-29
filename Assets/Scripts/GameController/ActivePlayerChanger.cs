@@ -12,7 +12,8 @@ namespace GameController
         private void Start()
         {
             var parameters = _activePlayer.GetComponent<PlayerParameters>();
-            _itemsListVisualizer.VisualizeList(parameters.Items);
+            _itemsListVisualizer.VisualizeList(parameters.PlayerItems);
+            parameters.PlayerItems.OnItemsDictionaryChanged += _itemsListVisualizer.VisualizeList;
         }
     }
 }

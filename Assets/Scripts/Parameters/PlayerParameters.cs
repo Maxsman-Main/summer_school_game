@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Items;
-using UnityEditor;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 namespace Parameters
@@ -13,8 +10,7 @@ namespace Parameters
         [SerializeField] private int _health;
         [SerializeField] private float _speed;
 
-        private Dictionary<string, IItem> _items;
-        
+        public Items PlayerItems { get; private set; }
         public event Action<int> OnHealthChanged;
 
         public int Health
@@ -28,23 +24,10 @@ namespace Parameters
         }
 
         public float Speed => _speed;
-        public Dictionary<string, IItem> Items => _items;
-
+        
         public PlayerParameters()
         {
-            _items = new Dictionary<string, IItem>();
-            this.AddItem(new Backpack());
-            this.AddItem(new Cockroach());
-        }
-
-        public void AddItem(IItem item)
-        {
-            _items.Add(item.Name, item);
-        }
-
-        public void RemoveItem(IItem item)
-        {
-            _items.Remove(item.Name);
+            PlayerItems = new Items();
         }
     }
 }

@@ -13,9 +13,15 @@ namespace Items
         {
             set => _name.text = value;
         }
-        public Action ButtonEvent
+
+        public void SubscribeOnButtonClick(Action buttonEvent)
         {
-            set => _button.OnButtonClicked += value;
+            _button.OnButtonClicked += buttonEvent;
+        }
+
+        public void Die()
+        {
+            Destroy(gameObject);
         }
     }
 }
