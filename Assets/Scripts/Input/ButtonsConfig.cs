@@ -7,5 +7,7 @@ namespace Input
     {
         public ICommand ButtonA { get; set; }
         public ICommand ButtonD { get; set; }
+        
+        public ICommand ButtonSpace { get; set; }
     }
 }

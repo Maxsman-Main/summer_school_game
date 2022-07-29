@@ -5,7 +5,7 @@ namespace Command
 {
     public class MovingRight : ICommand
     {
-        private MovableActor _movableActor;
+        private readonly MovableActor _movableActor;
 
         public MovingRight(MovableActor movableActor)
         {

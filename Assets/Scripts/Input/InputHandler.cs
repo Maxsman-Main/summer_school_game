@@ -16,6 +16,7 @@ namespace Input
             _buttons = new ButtonsConfig();
             _buttons.ButtonA = new MovingLeft(_movableActor);
             _buttons.ButtonD = new MovingRight(_movableActor);
+            _buttons.ButtonSpace = new Jump(_movableActor);
         }
 
         private void FixedUpdate()
@@ -28,6 +29,11 @@ namespace Input
             if (UnityEngine.Input.GetKey(KeyCode.D))
             {
                 _buttons.ButtonD.Execute();
+            }
+
+            if (UnityEngine.Input.GetKey(KeyCode.Space))
+            {
+                _buttons.ButtonSpace.Execute();
             }
         }
     }
