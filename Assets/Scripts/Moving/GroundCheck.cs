@@ -9,10 +9,11 @@ public class GroundCheck : MonoBehaviour
         IsGrounded = false;
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerStay2D(Collider2D col)
     {
         IsGrounded = true;
     }
+    
 
     public void OnTriggerExit2D(Collider2D other)
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Items;
+using UnityEngine;
 
 namespace Parameters
 {
@@ -28,9 +29,16 @@ namespace Parameters
             OnItemsDictionaryChanged?.Invoke(this);
         }
 
-        public void AddItem()
+        public bool AddItem(IItem item)
         {
+            if (_value.ContainsKey(item.Name))
+            {
+                return false;
+            }
+
+            _value.Add(item.Name, item);
             OnItemsDictionaryChanged?.Invoke(this);
+            return true;
         }
     }
 }

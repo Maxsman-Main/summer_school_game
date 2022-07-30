@@ -10,7 +10,7 @@ namespace Command
         {
             _movableActor = movableActor;
         }
-        
+            
         public void Execute()
         {
             _movableActor.Jump();
