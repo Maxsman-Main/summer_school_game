@@ -1,17 +1,23 @@
-using Attack;
 using UnityEngine;
 
 namespace Items
 {
-    public class Cockroach : IItem {
+    public class Cockroach : MonoBehaviour, IItem
+    {
+        [SerializeField] private GameObject _spawnObject;
 
-        private readonly IAttackBehavior _attackBehavior = new CockroachAttackBehavior();
+        private Transform _spawnPoint;
         
         public string Name => "Таракан";
 
         public void Use()
         {
-            _attackBehavior.Attack();
+            Instantiate(_spawnObject, _spawnPoint);
         }
+
+        public void SetSpawnPoint(Transform point)
+        {
+            _spawnPoint = point;
+        } 
     }
 }

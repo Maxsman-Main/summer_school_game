@@ -16,11 +16,6 @@ namespace Parameters
         public Items()
         {
             _value = new Dictionary<string, IItem>();
-            var backpack = new Backpack();
-            var cockroach = new Cockroach();
-
-            _value.Add(backpack.Name, backpack);
-            _value.Add(cockroach.Name, cockroach);
         }
 
         public void RemoveItem(string key)

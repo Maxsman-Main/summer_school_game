@@ -7,11 +7,6 @@ namespace Items
     {
         private IItem _item;
 
-        private void Start()
-        {
-           SetDropItem(new Backpack()); 
-        }
-
         public void SetDropItem(IItem item)
         {
             _item = item;
