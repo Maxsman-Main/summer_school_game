@@ -1,20 +1,19 @@
 using Moving;
-using UnityEngine;
 
 namespace Command
 {
-    public class MovingLeft : ICommand
+    public class Jump : ICommand
     {
         private readonly MovableActor _movableActor;
 
-        public MovingLeft(MovableActor movableActor)
+        public Jump(MovableActor movableActor)
         {
             _movableActor = movableActor;
         }
-        
+            
         public void Execute()
         {
-            _movableActor.MoveLeft();
+            _movableActor.Jump();
         }
     }
 }
